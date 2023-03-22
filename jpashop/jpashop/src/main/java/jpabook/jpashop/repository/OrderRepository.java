@@ -22,7 +22,7 @@ public class OrderRepository {
     }
 
     public List<Order> findAll(OrderSearch orderSearch){
-        String jpql = "select 0 from Order o join o.member m";
+        String jpql = "select o From Order o join o.member m";
 
         return em.createQuery(jpql, Order.class)
                 .setMaxResults(1000) // 최대 1000건
